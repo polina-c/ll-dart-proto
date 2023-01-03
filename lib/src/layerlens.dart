@@ -12,8 +12,9 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'package:layerlens/src/layerlens.dart';
+import 'dart:io';
 
-void main(List<String> args) {
-  generateLayering('.');
+void generateLayering(String packageFolder) {
+  print('generating files');
+  File('LAYERS.MD').writeAsStringSync(DateTime.now().toString() + '\n');
 }

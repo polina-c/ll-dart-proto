@@ -12,8 +12,16 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'package:layerlens/src/layerlens.dart';
+import 'dart:io';
 
-void main(List<String> args) {
-  generateLayering('.');
+import 'package:layerlens/src/code_parser.dart';
+import 'package:test/test.dart';
+
+void main() {
+  test('test name', () async {
+    final dir = Directory.current;
+    final deps = await collectDeps('example');
+
+    expect(deps, hasLength(2));
+  });
 }

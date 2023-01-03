@@ -11,9 +11,3 @@
 //  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
-
-import 'package:layerlens/src/layerlens.dart';
-
-void main(List<String> args) {
-  generateLayering('.');
-}
