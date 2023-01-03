@@ -19,7 +19,9 @@ import 'package:path/path.dart';
 import 'package:surveyor/src/driver.dart';
 import 'package:surveyor/src/visitors.dart';
 
-Future<Map<String, Set<String>>> collectDeps(String packageFolder) async {
+import 'model.dart';
+
+Future<Dependencies> collectDeps(String packageFolder) async {
   var collector = _DepsCollector(packageFolder);
   var driver = Driver.forArgs([packageFolder]);
   driver.forceSkipInstall = true;
