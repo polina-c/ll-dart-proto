@@ -19,9 +19,7 @@ import 'package:test/test.dart';
 
 void main() {
   test('test name', () async {
-    final dir = Directory.current;
     final deps = await collectDeps('example');
-
     expect(deps, hasLength(2));
   });
 }
