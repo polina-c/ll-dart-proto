@@ -12,9 +12,17 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'dart:io';
+import 'package:layerlens/src/code_parser.dart';
+import 'package:test/test.dart';
 
-void generateLayering(String packageFolder) {
-  print('generating files');
-  File('LAYERS.MD').writeAsStringSync(DateTime.now().toString() + '\n');
+void main() {
+  test('example', () async {
+    final deps = await collectDeps('example');
+    expect(deps, hasLength(2));
+  });
+
+  test('self', () async {
+    final deps = await collectDeps('.');
+    expect(deps, hasLength(2));
+  });
 }

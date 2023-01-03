@@ -12,7 +12,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'package:layerlens/src/layerlens.dart';
+import 'package:layerlens/layerlens.dart';
 
 void main(List<String> args) {
   generateLayering('.');

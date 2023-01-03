@@ -14,12 +14,10 @@
 
 import 'dart:io';
 
-import 'package:layerlens/src/code_parser.dart';
-import 'package:test/test.dart';
+import 'src/code_parser.dart';
 
-void main() {
-  test('test name', () async {
-    final deps = await collectDeps('example');
-    expect(deps, hasLength(2));
-  });
+void generateLayering(String packageFolder) {
+  final deps = collectDeps('.');
+  print('generating files');
+  File('LAYERS.MD').writeAsStringSync(deps.toString() + '\n');
 }
