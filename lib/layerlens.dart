@@ -12,12 +12,15 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'dart:io';
+import 'package:layerlens/src/formatter.dart';
+import 'package:layerlens/src/store.dart';
 
 import 'src/code_parser.dart';
 
-void generateLayering(String packageFolder) {
-  final deps = collectDeps('.');
-  print('generating files');
-  File('LAYERS.MD').writeAsStringSync(deps.toString() + '\n');
+Future<void> generateLayering(String packageFolder) async {
+  final deps = await collectDeps(packageFolder);
+  final layering = Layerring(deps);
+  final presenter =
+      LayeringPresenter(layering: layering, packageFolder: packageFolder);
+  presenter.generateFiles();
 }

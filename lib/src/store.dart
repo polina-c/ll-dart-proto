@@ -14,8 +14,8 @@
 
 import 'model.dart';
 
-class Store {
-  Store(Dependencies dependencies) : files = _depsToFiles(dependencies);
+class Layerring {
+  Layerring(Dependencies dependencies) : files = _depsToFiles(dependencies);
 
   late final Map<FullName, SourceFile> files;
 }

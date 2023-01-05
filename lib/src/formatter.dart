@@ -12,8 +12,20 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'package:layerlens/layerlens.dart';
+import 'dart:io';
 
-void main(List<String> args) async {
-  await generateLayering('.');
+import 'store.dart';
+
+class LayeringPresenter {
+  final Layerring layering;
+  final String packageFolder;
+
+  LayeringPresenter({
+    required this.layering,
+    required this.packageFolder,
+  });
+
+  void generateFiles() {
+    File('LAYERS.MD').writeAsStringSync('hi\n');
+  }
 }
