@@ -14,10 +14,25 @@
 
 import 'model.dart';
 
-class Layerring {
-  Layerring(Dependencies dependencies) : files = _depsToFiles(dependencies);
+const String _rootName = '';
 
-  late final Map<FullName, SourceFile> files;
+class Layering {
+  Layering(Dependencies dependencies) : files = _depsToFiles(dependencies) {
+    root = _root(files);
+  }
+
+  final Map<FullName, SourceFile> files;
+  late final SourceFolder root;
+}
+
+SourceFolder _root(Map<FullName, SourceFile> files) {
+  final result = SourceFolder([_rootName], {});
+
+  for (final file in files.keys){
+    result.
+  }
+
+  return result;
 }
 
 Map<FullName, SourceFile> _depsToFiles(Dependencies dependencies) {

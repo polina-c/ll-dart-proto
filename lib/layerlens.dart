@@ -12,14 +12,14 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import 'package:layerlens/src/formatter.dart';
-import 'package:layerlens/src/store.dart';
+import 'package:layerlens/src/presenter.dart';
+import 'package:layerlens/src/layering.dart';
 
 import 'src/code_parser.dart';
 
 Future<void> generateLayering(String packageFolder) async {
   final deps = await collectDeps(packageFolder);
-  final layering = Layerring(deps);
+  final layering = Layering(deps);
   final presenter =
       LayeringPresenter(layering: layering, packageFolder: packageFolder);
   presenter.generateFiles();

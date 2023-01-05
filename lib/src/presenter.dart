@@ -14,10 +14,10 @@
 
 import 'dart:io';
 
-import 'store.dart';
+import 'layering.dart';
 
 class LayeringPresenter {
-  final Layerring layering;
+  final Layering layering;
   final String packageFolder;
 
   LayeringPresenter({
